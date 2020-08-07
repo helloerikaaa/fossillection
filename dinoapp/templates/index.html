@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <title>Dino</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid mt-5 mb-3 text-center">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="fossils-tab"
+            data-toggle="tab"
+            href="#fossils"
+            role="tab"
+            aria-controls="fossils"
+            aria-selected="true"
+            >Fósiles <span class="badge badge-info">{{fossils_size}}</span></a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="meteors-tab"
+              data-toggle="tab"
+              href="#meteors"
+              role="tab"
+              aria-controls="meteors"
+              aria-selected="false"
+              >Meteoritos
+              <span class="badge badge-info">{{meteors_size}}</span></a
+            >
+          </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="minerals-tab"
+            data-toggle="tab"
+            href="#minerals"
+            role="tab"
+            aria-controls="minerals"
+            aria-selected="false"
+            >Minerales
+            <span class="badge badge-info">{{minerals_size}}</span></a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="rocks-tab"
+            data-toggle="tab"
+            href="#rocks"
+            role="tab"
+            aria-controls="rocks"
+            aria-selected="false"
+            >Rocas <span class="badge badge-info">{{rocks_size}}</span></a
+          >
+        </li>
+      </ul>
+      <div class="tab-content text-center" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="fossils"
+          role="tabpanel"
+          aria-labelledby="fossils-tab"
+        >
+          <div class="row">
+            {% for fossil in fossils %}
+            <div class="card mt-3 ml-3" style="width: 18rem;">
+              <img
+                src="media/{{ fossil.photo }}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h3 class="card-title text-center">{{ fossil.name }}</h3>
+                <h5>Clasificación</h5>
+                <p>{{fossil.classification}}</p>
+                <h5>Tamaño</h5>
+                <p>{{fossil.width}} cm x {{fossil.height}} cm</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="minerals"
+          role="tabpanel"
+          aria-labelledby="minerals-tab"
+        >
+          <div class="row">
+            {% for mineral in minerals %}
+            <div class="card mt-3 ml-3" style="width: 18rem;">
+              <img
+                src="media/{{ mineral.photo }}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ mineral.name }}</h5>
+                <h6>Clasificación</h6>
+                <p>{{mineral.classification}}</p>
+                <h6>Tamaño</h6>
+                <p>{{mineral.width}} cm x {{mineral.height}} cm</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="meteors"
+          role="tabpanel"
+          aria-labelledby="meteors-tab"
+        >
+          <div class="row">
+            {% for meteor in meteors %}
+            <div class="card mt-3 ml-3" style="width: 18rem;">
+              <img
+                src="media/{{ meteor.photo }}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h3 class="card-title">{{ meteor.name }}</h3>
+                <h5>Clasificación</h5>
+                <p>{{meteor.classification}}</p>
+                <h5>Tamaño</h5>
+                <p>{{meteor.width}} cm x {{meteor.height}} cm</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="rocks"
+          role="tabpanel"
+          aria-labelledby="rocks-tab"
+        >
+        <div class="row">
+            {% for rock in rocks %}
+            <div class="card mt-3 ml-3" style="width: 18rem;">
+              <img
+                src="media/{{ rock.photo }}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ rock.name }}</h5>
+                <h6>Clasificación</h6>
+                <p>{{rock.classification}}</p>
+                <h6>Tamaño</h6>
+                <p>{{rock.width}} cm x {{rock.height}} cm</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
